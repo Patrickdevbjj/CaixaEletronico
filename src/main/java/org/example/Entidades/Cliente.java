@@ -6,7 +6,8 @@ public class Cliente {
     private String endereço;
     private int cpf;
 
-    Conta contaCliente = new Conta();
+    Conta contaCliente;
+
     public Cliente() {
     }
 

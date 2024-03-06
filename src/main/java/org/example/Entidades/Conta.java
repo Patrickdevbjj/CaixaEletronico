@@ -1,8 +1,10 @@
 package org.example.Entidades;
 
+import java.util.Scanner;
+
 public class Conta {
 
-    private int contaCorrente;
+
     private int agencia;
     private String Banco;
     private Double saldo;
@@ -12,21 +14,13 @@ public class Conta {
     public Conta() {
     }
 
-    public Conta(int contaCorrente, int agencia,String qualBanco, Double saldo, String senha ) {
-        this.contaCorrente = contaCorrente;
+    public Conta( int agencia,String qualBanco, Double saldo, String senha ) {
         this.agencia = agencia;
         this.Banco = qualBanco;
         this.saldo = saldo;
         this.senha = senha;
     }
 
-    public int getContaCorrente() {
-        return contaCorrente;
-    }
-
-    public void setContaCorrente(int contaCorrente) {
-        this.contaCorrente = contaCorrente;
-    }
 
     public int getAgencia() {
         return agencia;
@@ -58,5 +52,11 @@ public class Conta {
 
     public void setSenha(String senha) {
         this.senha = senha;
+    }
+
+    public criarNovaConta() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Digite seu nome :");
+        scanner.next(nome);
     }
 }
