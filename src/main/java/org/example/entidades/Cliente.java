@@ -1,17 +1,17 @@
-package org.example.Entidades;
+package org.example.entidades;
 
 public class Cliente {
 
     private String nome;
     private String endereço;
-    private int cpf;
+    private Long cpf;
 
     Conta contaCliente;
 
     public Cliente() {
     }
 
-    public Cliente(String nome, String endereço, int cpf, Conta contaCliente) {
+    public Cliente(String nome, String endereço, Long cpf, Conta contaCliente) {
         this.nome = nome;
         this.endereço = endereço;
         this.cpf = cpf;
@@ -34,11 +34,11 @@ public class Cliente {
         this.endereço = endereço;
     }
 
-    public int getCpf() {
+    public Long getCpf() {
         return cpf;
     }
 
-    public void setCpf(int cpf) {
+    public void setCpf(Long cpf) {
         this.cpf = cpf;
     }
 

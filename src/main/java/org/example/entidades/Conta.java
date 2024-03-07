@@ -1,6 +1,4 @@
-package org.example.Entidades;
-
-import java.util.Scanner;
+package org.example.entidades;
 
 public class Conta {
 
