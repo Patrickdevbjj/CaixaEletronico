@@ -3,18 +3,39 @@ package org.example.menu;
 import org.example.Entidades.Cliente;
 import org.example.Entidades.Conta;
 
+import java.util.List;
+import java.util.Optional;
 import java.util.Scanner;
+import java.util.stream.Stream;
 
 public class Principal {
     Scanner scanner = new Scanner(System.in);
 
 
-    public static void acessarConta() {
-        System.out.println("Digite seu nome e cpf: ");
-        // Coloque aqui a lógica para acessar a conta
+    public criarConta(List<Cliente> listaClientes) {
+        
     }
 
-    public void menuConta() {
+    public void acessarConta(List<Cliente> listaClientes) {
+
+        System.out.println("Digite seu CPF: ");
+        int cpf = scanner.nextInt();
+
+        System.out.println("Digite sua Senha: ");
+        String senha = scanner.next();
+
+        List<Cliente> clientePermitido = listaClientes.stream().filter((cliente) -> {
+            return cliente.getCpf() == cpf && cliente.getContaCliente().getSenha() == senha;
+        }).toList();
+
+        if (!clientePermitido.isEmpty()) {
+            System.out.println(clientePermitido.get(0));
+        } else {
+            System.out.println("Usuario não encontrado ");
+        }
+    }
+
+    public void menuConta(List<Cliente> listaClientes) {
         int opcao;
         do {
             System.out.println("\nMenu do Banco:");
@@ -27,11 +48,11 @@ public class Principal {
 
             switch (opcao) {
                 case 1:
-                    acessarConta();
+                    acessarConta(listaClientes);
                     break;
                 case 2:
                     System.out.println("Você escolheu criar conta.");
-                    // Coloque aqui a lógica para criar uma nova conta
+
                     break;
                 case 3:
                     System.out.println("Você escolheu remover conta.");
@@ -44,15 +65,13 @@ public class Principal {
                     System.out.println("Opção inválida. Tente novamente.");
             }
         } while (opcao != 0);
-        scanner.close();
     }
 
-    public void criarNovaConta() {;
+
+    public void criarNovaConta() {
         String nome = "";
         String endereco = "";
         int cpf = 0;
-
-        Scanner scanner = new Scanner(System.in);
 
 
         System.out.println("Digite o seu nome: ");
@@ -72,4 +91,5 @@ public class Principal {
         novoCliente.setCpf(cpf);
 
     }
+
 }

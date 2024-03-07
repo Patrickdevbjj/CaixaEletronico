@@ -54,9 +54,5 @@ public class Conta {
         this.senha = senha;
     }
 
-    public criarNovaConta() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Digite seu nome :");
-        scanner.next(nome);
-    }
+
 }
