@@ -9,6 +9,8 @@ import java.util.Scanner;
 public class MenuPrincipalService {
     Scanner scanner = new Scanner(System.in);
 
+    private final MinhaConta minhaConta = new MinhaConta();
+
      public boolean verificarSenha(List<Cliente> listaClientes) {
         System.out.println("Digite seu CPF: ");
         int cpf = scanner.nextInt();
@@ -34,7 +36,7 @@ public class MenuPrincipalService {
 
         verificarSenha(listaClientes);
 
-        // chamar menu da conta
+        minhaConta
     }
 
     public void criarNovaConta(List<Cliente> listaClientes) {
