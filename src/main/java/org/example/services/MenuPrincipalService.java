@@ -2,6 +2,7 @@ package org.example.services;
 
 import org.example.entidades.Cliente;
 import org.example.entidades.Conta;
+import org.example.menu.MinhaConta;
 
 import java.util.List;
 import java.util.Scanner;
@@ -9,7 +10,7 @@ import java.util.Scanner;
 public class MenuPrincipalService {
     Scanner scanner = new Scanner(System.in);
 
-    private final MinhaConta minhaConta = new MinhaConta();
+    public MinhaConta minhaConta = new MinhaConta();
 
      public boolean verificarSenha(List<Cliente> listaClientes) {
         System.out.println("Digite seu CPF: ");
@@ -36,7 +37,7 @@ public class MenuPrincipalService {
 
         verificarSenha(listaClientes);
 
-        minhaConta
+        MinhaConta.menuContaPrincipal();
     }
 
     public void criarNovaConta(List<Cliente> listaClientes) {
@@ -44,7 +45,7 @@ public class MenuPrincipalService {
 
         String nome = "";
         String endereco = "";
-        Long cpf = 0L;
+        long cpf = 0L;
         String senha = "";
 
         System.out.println("Digite o seu nome: ");
